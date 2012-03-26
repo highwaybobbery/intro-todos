@@ -7,3 +7,9 @@ Feature: Create Todos
     Given I have signed in
     When I create a todo titled "buy some milk on my way home"
     Then "buy some milk on my way home" should be in my list of things to do
+
+  Scenario: Create an invalid todo
+    Given I have signed in
+    When I create a todo wihtout a title
+    Then I sould have no todos
+    And I should see an error message telling me that title is required
