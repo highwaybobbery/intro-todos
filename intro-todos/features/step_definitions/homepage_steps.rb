@@ -3,14 +3,14 @@ When /^I go to the homepage$/ do
 end
 
 Then /^I should see the product name$/ do
-  page.should have_css("h1", text: "Welcome to Do It TDD", text: "/todo/")
+  page.should have_css("h1", text: "Welcome to Do It TDD")
 end
 
 Then /^I should see the product description$/ do
-  page.should have_css("[data-role='product-description']")
+  page.should have_css("[data-role='product-description']", text: /todo/)
 end
 
-Then /^I should be able to sign up for an account$/ do
-  pending # express the regexp above with the code you wish you had
+Then /^I should be able to begin the registration process$/ do
+  page.should have_css("a[href='/sign_up']", text: "Sign up for an account")
 end
 

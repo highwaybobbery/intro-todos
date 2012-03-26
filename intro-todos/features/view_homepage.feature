@@ -14,7 +14,7 @@ Feature: View the homepage
 
   Scenario: Be able to sign up
     When I go to the homepage
-    Then I should be able to sign up for an account
+    Then I should be able to begin the registration process
     
 
     
