@@ -4,17 +4,8 @@ Feature: View the homepage
   I should be able to see information about the application
   And how I will benefit by using it
 
-  Scenario: View the product name
+  Scenario: View information about the product
     When I go to the homepage
     Then I should see the product name
-
-  Scenario: View the product description
-    When I go to the homepage
-    Then I should see the product description
-
-  Scenario: Be able to sign up
-    When I go to the homepage
-    Then I should be able to begin the registration process
-    
-
-    
+    And  I should see the product description
+    And  I should be able to begin the registration process
