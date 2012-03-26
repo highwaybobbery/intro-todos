@@ -4,7 +4,9 @@ When /^I create a todo titled "([^"]*)"$/ do |todo_title|
   click_button "Create"
 end
 
-Then /^"([^"]*)" should be in my list of things to do$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then /^"([^"]*)" should be in my list of things to do$/ do |todo_title|
+  within "ul.todos" do
+    page.should have_css("li", text: todo_title)
+  end
 end
 
