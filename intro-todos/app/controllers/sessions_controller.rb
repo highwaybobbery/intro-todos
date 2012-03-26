@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     session[:current_user] = params[:user][:email]
-    redirect_to root_path
+    redirect_to todos_path
   end
 
   def destroy
