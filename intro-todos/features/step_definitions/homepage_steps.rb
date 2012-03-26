@@ -11,6 +11,6 @@ Then /^I should see the product description$/ do
 end
 
 Then /^I should be able to begin the registration process$/ do
-  page.should have_css("a[href='/sign_up']", text: "Sign up for an account")
+  page.should have_link("Sign up for an account", href: '/sign_up' )
 end
 
