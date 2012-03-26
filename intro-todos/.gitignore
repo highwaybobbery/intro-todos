@@ -13,7 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
+/bin
 # Ignore all vim swap files
 *.swp
 
