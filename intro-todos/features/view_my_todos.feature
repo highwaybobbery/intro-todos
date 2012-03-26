@@ -15,3 +15,19 @@ Feature: View todos I own
       | Buy milk   |
       | Buy eggs   |
       | Buy cheese |
+
+  Scenario: View only my todos
+    Given the following todos exist:
+      | title         | owner           |
+      | Buy milk      | me@example.com  |
+      | Buy eggs      | me@example.com  |
+      | Buy cheese    | me@example.com  |
+      | Buy chocolate | joe@example.com |
+      | Buy cake      | joe@example.com |
+
+    And I have signed in as "me@example.com"
+    Then I should not see the following todos:
+      | Buy chocolate   |
+      | Buy cake        |
+
+
