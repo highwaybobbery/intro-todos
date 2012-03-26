@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
   def index
-    @todos = Todo.all
+    @todos = current_user.todos
   end
 
   def new
@@ -8,7 +8,8 @@ class TodosController < ApplicationController
   end
 
   def create 
-    @todo = Todo.new(params[:todo])
+    @todo = Todo.new(params[:todo].
+                 merge(owner: current_user.email_address))
     if(@todo.save)
     redirect_to todos_path
     else

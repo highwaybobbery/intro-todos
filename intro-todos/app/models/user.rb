@@ -13,4 +13,7 @@ class User
     email_address.to_s
   end
 
+  def todos
+    Todo.where(owner: email_address)
+  end
 end

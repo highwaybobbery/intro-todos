@@ -14,6 +14,7 @@ describe User, "with an email address" do
   it "returns email for to_s" do
     subject.to_s.should == "john@example.com"
   end
+
 end
 
 describe User, "without an email address" do
@@ -30,4 +31,20 @@ describe User, "without an email address" do
   it "returns '' for to_s" do
     subject.to_s.should == ""
   end
+
+end
+
+describe User, "with todos" do
+  subject { User.new("me@example.com") }
+  
+  before do
+    FactoryGirl.create(:todo, title:  "mine", owner: "me@example.com")
+    FactoryGirl.create(:todo, title: "yours", owner: "not_me@example.com")
+  end
+
+  it "finds only my todos" do
+    subject.todos.length.should == 1
+    subject.todos.first.title.should == "mine"
+  end
+
 end
