@@ -14,6 +14,8 @@ Spork.prefork do
   end
 
   Cucumber::Rails::Database.javascript_strategy = :truncation
+
+  require "factory_girl/step_definitions"
 end
 
 Spork.each_run { }

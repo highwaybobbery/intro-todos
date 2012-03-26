@@ -7,6 +7,7 @@ gem 'rails', '3.2.2'
 
 gem 'sqlite3'
 gem 'high_voltage'
+gem 'dynamic_form'
 
 group :test do
  gem "cucumber-rails", require: false

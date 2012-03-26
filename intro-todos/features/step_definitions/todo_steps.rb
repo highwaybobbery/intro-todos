@@ -19,8 +19,16 @@ Then /^I sould have no todos$/ do
 end
 
 Then /^I should see an error message telling me that title is required$/ do
-  within "ul.errors" do
+  within "ul" do
     page.should have_css("li", text: /Title/)
   end
 end
+
+Then /^I should see the following todos:$/ do |table|
+  todos = table.raw.flatten
+  todos.each do |todo|
+    step %{"#{todo}" should be in my list of things to do}
+  end
+end
+
 
