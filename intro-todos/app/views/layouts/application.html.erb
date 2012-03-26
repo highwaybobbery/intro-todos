@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>IntroTodos</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <% if session[:current_user] %>
-    <div data-role="user-identification"><%= session[:current_user] %></div>
-    <%= link_to "Sign out", sessions_path, :method => 'delete' %>
-  <% end %>
-<%= yield %>
+  <head>
+    <title>IntroTodos</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <% if signed_in? %>
+      <div data-role="user-identification"><%= current_user %></div>
+      <%= link_to "Sign out", sessions_path, :method => :delete %>
+    <% else %>
+      <%= link_to "Sign up for an account" , "/sign_up" %>
+    <% end %>
 
-</body>
+    <%= yield %>
+
+  </body>
 </html>
