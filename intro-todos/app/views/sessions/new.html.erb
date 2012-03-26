@@ -1,0 +1,6 @@
+<h1>Sessions#new</h1>
+<%= form_for :user, :url => sessions_path do |form| %>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+  <%= form.submit "Create my account" %>
+<% end %>
