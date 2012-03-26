@@ -1,4 +1,6 @@
 IntroTodos::Application.routes.draw do
+  
+  root to: "high_voltage/pages#show", id: "homepage"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
